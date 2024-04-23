@@ -1,5 +1,5 @@
 # docker-ipfs-production
-this is a repo to deploy IPFS + IPFS cluster production
+Repositori ini merupakan repo yang digunakan untuk implementasi docker IPFS+IPFS cluster
 
 ## .env
 tambahkan file .env dari contoh .env.example
