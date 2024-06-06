@@ -1,3 +1,4 @@
+#!/bin/bash
 export LIBP2P_FORCE_PNET=1
 ipfs bootstrap rm --all
 #dibawah ini adalah contoh untuk menambahkan alamat bootstrap peer ID
