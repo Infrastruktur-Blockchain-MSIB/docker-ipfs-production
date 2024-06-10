@@ -1,14 +1,12 @@
-version: "3.8"
-
 services:
 
   ipfs:
     container_name: ipfs-${PT}
     image: ipfs/kubo:latest
     ports:
-     - "4001:4001" # ipfs swarm - expose if needed/wanted
-     - "5001:5001" # ipfs api - expose if needed/wanted
-     - "8080:8080" # ipfs gateway - expose if needed/wanted
+     - "4001:4001"
+     - "5001:5001"
+     - "8080:8080"
     volumes:
       - ./ipfs:/data/ipfs
       - ./bootstrap.sh:/container-init.d/bootstrap.sh
@@ -21,6 +19,7 @@ services:
       - ipfs
     environment:
       CLUSTER_PEERNAME: cluster-${PT}
+      CLUSTER_SECRET: ${CLUSTER_SECRET}
       CLUSTER_IPFSHTTP_NODEMULTIADDRESS: /dns4/ipfs-$PT/tcp/5001
       CLUSTER_CRDT_TRUSTEDPEERS: '*'
       CLUSTER_RESTAPI_HTTPLISTENMULTIADDRESS: /ip4/0.0.0.0/tcp/9094
